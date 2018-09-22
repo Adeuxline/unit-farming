@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Pet Farming</title>
+	<title>Unit Farming</title>
 
 	<!-- Custom CSS -->
 	<link href="files/css/normalize.css" rel="stylesheet">
@@ -35,7 +35,9 @@
 	<!--
 	Credits and importants messages
 	-->
-	
+	<center><h1><b>!!! DEV VERSION !!!</b><br/> Everything can change and you can lose your datas<h1><br/>
+	<h1>Please contact me on Discord (<b>Adeuxline#6320</b>) if you have ideas, recommandations or anything else to say :-)<h1>
+	<h2>Don't forget to visit my <a href="http://adeuxline.github.io/pet-farming">pet-farming website</a></h2></center>
 	<div id="petInputs">
 		<div class="petInput" v-for="pet in orderedPetList">
 			<a id="${pet.img}-pet" :href="`https://www.endlessfrontierdata.com/units/${pet.img}`" :class="pet.fragments < pet.needed ? 'oneStar' : 'fiveStar'">
