@@ -68,13 +68,15 @@ const originalData = {
 // Load saved data if it exists
 const savedData = JSON.parse(localStorage.getItem('data')) || false;
 let data;
-if (savedData) {
+if (savedData) { 
+/*
   if (savedData.version === originalData.version) {
     data = _.cloneDeep(savedData);
   } else {
     data = _.cloneDeep(originalData);
   }
 } else {
+*/
   data = _.cloneDeep(originalData);
 }
 
