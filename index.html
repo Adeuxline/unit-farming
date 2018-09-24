@@ -20,7 +20,7 @@
 	<script src="files/js/data.js" defer></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126251816-1"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UAp;126251816-1"></script>
 	<script>
   		window.dataLayer = window.dataLayer || [];
   		function gtag(){dataLayer.push(arguments);}
@@ -39,15 +39,18 @@
 	<h2>Don't forget to visit my <a href="http://adeuxline.github.io/pet-farming">pet-farming website</a></h2></center>
 	<div id="petInputs">
 		<div class="petInput" v-for="pet in orderedPetList">
-			<a id="${pet.img}-pet" :href="`https://www.endlessfrontierdata.com/units/${pet.img}`" :class="pet.fragments < pet.needed ? 'oneStar' : 'fiveStar'">
+		<div v-if="pet.img !== 0">
+		<a id="${pet.img}-pet" :href="`https://www.endlessfrontierdata.com/units/${pet.img}`" :class="pet.fragments < pet.needed ? 'oneStar' : 'fiveStar'">
 				<img :src="`http://www.endlessfrontierdata.com/images/units/${pet.img}.png`">
 			</a>
 			<div>
-				<span class="petName">{{ pet.name }}</span><br/>
-				
-				<br/><br/>
-				<input v-model.number="pet.fragments" type="number" step="1" min="0" max="999" style="clear:both;">/{{ pet.needed }}
+				<span class="petName">{{ pet.fragments }} / {{ pet.needed }} Senior {{ pet.name }}</span><br/>
+				<p v-if="typeof pet.caract1 !== 'undefined'">{{ pet.fragments_n }}/Bonus max</p><p v-else><br/></p>
+				<p v-if="typeof pet.caract2 !== 'undefined'">{{ pet.fragments_n }}/Bonus max</p><p v-else><br/></p>
+				<input v-model.number="pet.fragments" type="number" step="1" min="0" max="999" style="clear:both;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input v-model.number="pet.fragments_n" type="number" step="1" min="0" max="999" style="clear:both;">
 			</div>
+		</div>
 		</div>
 	</div>
 </div>
