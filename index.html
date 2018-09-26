@@ -41,12 +41,12 @@
 		<div class="petInput" v-for="pet in orderedPetList">
 		<div v-if="pet.img !== 0">
 		<a id="${pet.img}-pet" :href="`https://www.endlessfrontierdata.com/units/${pet.img}`" :class="pet.fragments < pet.needed ? 'oneStar' : 'twoStar'">
-				<img :src="`http://www.endlessfrontierdata.com/images/units/${pet.img}.png`">
+				<img :src="`https://www.endlessfrontierdata.com/images/units/${pet.img}.png`">
 			</a>
 			<div>
 				<span class="petName">{{ pet.fragments }} / {{ pet.needed }} Senior {{ pet.name }}</span><br/>
-				<p v-if="pet.caract1_5">Bonus 1: {{ pet.fragments * pet.caract1_6 + pet.fragments_n * pet.caract1_5 }} / {{ pet.caract1_max }}</p><p v-else><br/></p>
-				<p v-if="pet.caract2_5">Bonus 2: {{ pet.fragments * pet.caract2_6 + pet.fragments_n * pet.caract2_5}} / {{ pet.caract2_max }}</p><p v-else><br/></p>
+				<p :class=" (pet.fragments * pet.caract1_6 + pet.fragments_n * pet.caract1_5 ) >= pet.caract1_max ? 'bonusok' : 'bonusnonok'" v-if="pet.caract1_5">Bonus 1: {{ pet.fragments * pet.caract1_6 + pet.fragments_n * pet.caract1_5 }} / {{ pet.caract1_max }}</p><p v-else><br/></p>
+				<p :class=" (pet.fragments * pet.caract2_6 + pet.fragments_n * pet.caract2_5 ) >= pet.caract2_max ? 'bonusok' : 'bonusnonok'" v-if="pet.caract2_5">Bonus 2: {{ pet.fragments * pet.caract2_6 + pet.fragments_n * pet.caract2_5}} / {{ pet.caract2_max }}</p><p v-else><br/></p>
 				<input v-model.number="pet.fragments" type="number" step="1" min="0" max="999" style="clear:both;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<input v-model.number="pet.fragments_n" type="number" step="1" min="0" max="999" style="clear:both;">
 			</div>

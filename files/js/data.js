@@ -226,19 +226,5 @@ const vm = new Vue({
       }
       data.farmList = _.filter(data.farmList, obj => obj.farmableFrags > 0);
     },
-    caract1(){
-	  if ((caract1_5 * fragments_n + caract1_6 *fragments) < caract1_max) {
-	    return caract1_5 * fragments_n + caract1_6 *fragments
-	  } else {
-		return caract1_max;
-	  }
-    },
-    caract2(){
-	  if ((caract2_5 * fragments_n + caract2_6 *fragments) < caract2_max) {
-		return caract2_5 * fragments_n + caract2_6 *fragments
-	  } else {
-		return caract2_max;
-	  }
-    },
   },
 });
