@@ -8,7 +8,7 @@ Vue.directive('sortable', {
 const originalData = {
   version: '0.2',
   petList: [
-    { name: 'Crimson Hawk Rider', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "3",  caract1_6: "5", caract1_max: "30", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 20, img: 191, index: 0, defaultTier: 1 },
+    { name: 'Crimson Hawk Rider', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "1",  caract1_6: "3", caract1_max: "60", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 20, img: 191, index: 0, defaultTier: 1 },
     { name: 'Musketress', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 15, img: 183, index: 1, defaultTier: 2 },
     { name: 'Winged Knight', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "10",  caract1_6: "20", caract1_max: "600", caract2_name: "", caract2_5: "0.02", caract2_6: "0.04", caract2_max: "1.2", needed: 30, img: 175, index: 2, defaultTier: 3 },
     { name: 'Cleric', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "1", caract2_6: "3", caract2_max: "50", needed: 17, img: 167, index: 3, defaultTier: 4 },
@@ -69,12 +69,6 @@ const originalData = {
     { name: 'Ice Wizard', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 76, index: 58, defaultTier: 59 },
     { name: 'Big Foot', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 74, index: 59, defaultTier: 60 },
   ],
-  SHList: [],
-  KL: 100,
-  entries: 10,
-  refills: 3,
-  gemCostArray: [0, 100, 300, 700, 1500, 2700, 4300],
-  farmList: [],
 };
 
 // Load saved data if it exists
@@ -91,65 +85,16 @@ if (savedData) {
 }
 
 const orderedPetList = _.orderBy(data.petList, 'index');
-for (let i = 0; i < orderedPetList.length * 2 + 10; i++) {
-  data.SHList[i] = [{}, {}];
-}
-
-// Create SH pages
-for (let i = 0; i < orderedPetList.length; i++) {
-  data.SHList[i][0].img = orderedPetList[i].img;
-  data.SHList[i][0].name = orderedPetList[i].name;
-  data.SHList[i + orderedPetList.length][0].img = orderedPetList[i].img;
-  data.SHList[i + orderedPetList.length][0].name = orderedPetList[i].name;
-  if (i < 5) {
-    data.SHList[i][1].img = orderedPetList[i].img;
-    data.SHList[i][1].name = orderedPetList[i].name;
-  } else {
-    data.SHList[(i - 2) * 2][1].img = orderedPetList[i].img;
-    data.SHList[(i - 2) * 2][1].name = orderedPetList[i].name;
-  }
-  data.SHList[i * 2 + 5][1].img = orderedPetList[i].img;
-  data.SHList[i * 2 + 5][1].name = orderedPetList[i].name;
-}
-
-// Create SH page numbers
-for (let i = 0, page = 1, pageIndex = 1; i < data.SHList.length; i++) {
-  data.SHList[i][0].KLReq = `${i * 2 + 2}`;
-  data.SHList[i][0].stage = `${page}-${pageIndex}`;
-  pageIndex += 4;
-  data.SHList[i][1].stage = `${page}-${pageIndex}`;
-  pageIndex++;
-  if (pageIndex > 20) {
-    pageIndex = 1;
-    page++;
-  }
-}
-
-
-// Trim off excess stages
-data.SHList.length = data.petList.length * 2 - 4;
 
 const vm = new Vue({
   el: '#app',
   data,
-  created() {
-    this.updateFarmList();
-  },
   watch: {
     petList: {
       handler(val) {
         this.updateFarmList();
       },
-    },
-    KL() {
-      this.updateFarmList();
-    },
-    entries() {
-      this.updateFarmList();
-    },
-    refills() {
-      this.updateFarmList();
-    },
+    }
   },
   computed: {
     orderedPetList() {
@@ -166,63 +111,11 @@ const vm = new Vue({
       }
       return pet;
     },
-    reorderPetList({ oldIndex, newIndex }) {
-      const movedItem = data.petList.splice(oldIndex, 1)[0];
-      data.petList.splice(newIndex, 0, movedItem);
-    },
-    resetTierList() {
-      data.petList = _.orderBy(data.petList, 'defaultTier');
-    },
-    addFarmedFrags() {
-      for (const pet of data.petList) {
-        pet.fragments += pet.farmableFrags;
-      }
-      this.updateFarmList();
-    },
     updateFarmList() {
-      // Reset farmableFrags to zero on all pets
-      _.forEach(data.petList, (obj) => {
-        _.set(obj, 'farmableFrags', 0);
-      });
 
       // Save data
       localStorage.setItem('data', JSON.stringify(data));
 
-      data.farmList = data.petList;
-      let tickets = data.entries + data.refills * 5;
-
-      for (const pet of data.farmList) {
-        const availableFrags = _.filter(data.SHList, obj => obj[0].KLReq <= data.KL && (obj[0].name === pet.name || obj[1].name === pet.name));
-        pet.farmableFrags = 0;
-        if (availableFrags !== []) {
-          let firstStageFrags = 3;
-          if (pet.index >= data.petList.length - 4) {
-            // Newest pets only have 1 frag on first stage
-            firstStageFrags = 1;
-          }
-          for (let i = 0; i < availableFrags.length; i++) {
-            if (availableFrags[i][0].name === pet.name) {
-              pet.farmableFrags += firstStageFrags;
-              // Only the first first stage has 3 frags
-              if (firstStageFrags === 3) {
-                firstStageFrags = 1;
-              }
-            }
-            if (availableFrags[i][1].name === pet.name) {
-              pet.farmableFrags += 3;
-            }
-          }
-        }
-        // If we're farming more frags than needed to finish the pet, remove the excess, or more than we have remaining tickets, remove excess
-        pet.farmableFrags = pet.farmableFrags > 330 - pet.fragments ? 330 - pet.fragments : pet.farmableFrags;
-        pet.farmableFrags = pet.farmableFrags > tickets ? tickets : pet.farmableFrags;
-        pet.daysRemaining = Math.ceil((330 - pet.fragments) / pet.farmableFrags);
-        tickets -= pet.farmableFrags;
-        if (tickets <= 0) {
-          break;
-        }
       }
-      data.farmList = _.filter(data.farmList, obj => obj.farmableFrags > 0);
-    },
   },
 });
