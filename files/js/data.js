@@ -76,7 +76,7 @@ const savedData = JSON.parse(localStorage.getItem('data')) || false;
 let data;
 if (savedData) { 
   if (savedData.version === originalData.version) {
-    data = _.cloneDeep(originalData);
+    data = _.cloneDeep(savedData);
   } else {
     data = _.cloneDeep(originalData);
   }
@@ -110,6 +110,10 @@ const vm = new Vue({
         }
       }
       return pet;
+    },
+    resetUnits(){
+        localStorage.setItem('data', JSNON.stringify(originalData));
+        window.location.reload();
     },
     updateFarmList() {
 
