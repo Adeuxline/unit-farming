@@ -8,7 +8,7 @@ Vue.directive('sortable', {
 const originalData = {
   version: '0.2',
   petList: [
-    { name: 'Crimson Hawk Rider', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 191, index: 0, defaultTier: 1 },
+    { name: 'Crimson Hawk Rider', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "3",  caract1_6: "5", caract1_max: "30", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 20, img: 191, index: 0, defaultTier: 1 },
     { name: 'Musketress', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 15, img: 183, index: 1, defaultTier: 2 },
     { name: 'Winged Knight', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "10",  caract1_6: "20", caract1_max: "600", caract2_name: "", caract2_5: "0.02", caract2_6: "0.04", caract2_max: "1.2", needed: 30, img: 175, index: 2, defaultTier: 3 },
     { name: 'Cleric', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "1", caract2_6: "3", caract2_max: "50", needed: 17, img: 167, index: 3, defaultTier: 4 },
@@ -23,7 +23,7 @@ const originalData = {
     { name: 'Gunner', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 18, index: 12, defaultTier: 13 },
     { name: 'Fire Mage', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 16, index: 13, defaultTier: 14 },
     { name: 'Golem', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 14, index: 14, defaultTier: 15 },
-    { name: 'Astral Captain', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "1",  caract1_6: "2", caract1_max: "20", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 10, img: 193, index: 15, defaultTier: 16 },
+    { name: 'Astral Captain', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "1",  caract1_6: "2", caract1_max: "30", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 15, img: 193, index: 15, defaultTier: 16 },
     { name: 'Elf Sage', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 15, img: 185, index: 16, defaultTier: 17 },
     { name: 'Windwalker', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "10",  caract1_6: "20", caract1_max: "600", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 30, img: 177, index: 17, defaultTier: 18 },
     { name: 'Elementalist', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "75", caract2_6: "150", caract2_max: "4000", needed: 27, img: 169, index: 18, defaultTier: 19 },
@@ -36,9 +36,9 @@ const originalData = {
     { name: 'Druid', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 107, index: 25, defaultTier: 26 },
     { name: 'Fairy', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "1",  caract1_6: "2.5", caract1_max: "30", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 14, img: 97, index: 26, defaultTier: 27 },
     { name: 'Unicorn Knight', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 38, index: 27, defaultTier: 28 },
-    { name: 'Wolf Warrior', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 36, index: 28, defaultTier: 29 },
+    { name: 'Wolf Warrior', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 10, img: 36, index: 28, defaultTier: 29 },
     { name: 'Ent', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 34, index: 29, defaultTier: 30 },
-    { name: 'Shadow Knight', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 195, index: 30, defaultTier: 31 },
+    { name: 'Shadow Knight', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 12, img: 195, index: 30, defaultTier: 31 },
     { name: 'Crow Knight', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: 5,  caract1_6: 10, caract1_max: 150, caract2_name: "", caract2_5: "75", caract2_6: "150", caract2_max: "4000", needed: 27, img: 187, index: 31, defaultTier: 32 },
     { name: 'Abyss Mage', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "10",  caract1_6: "20", caract1_max: "600", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 30, img: 179, index: 32, defaultTier: 33 },
     { name: 'Dark Elf', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 15, img: 171, index: 33, defaultTier: 34 },
@@ -53,7 +53,7 @@ const originalData = {
     { name: 'Death Knight', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 58, index: 42, defaultTier: 43 },
     { name: 'Bomb Unit', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 56, index: 43, defaultTier: 44 },
     { name: 'Hands of Death', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 54, index: 44, defaultTier: 45 },
-    { name: 'War Bear Rider', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 197, index: 45, defaultTier: 46 },
+    { name: 'War Bear Rider', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "20",  caract1_6: "40", caract1_max: "1000", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 25, img: 197, index: 45, defaultTier: 46 },
     { name: 'Rangda', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: 5,  caract1_6: 10, caract1_max: 150, caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 15, img: 189, index: 46, defaultTier: 47 },
     { name: 'Siren', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "10",  caract1_6: "20", caract1_max: "600", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 30, img: 181, index: 47, defaultTier: 48 },
     { name: 'Frost Demon', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 24, img: 173, index: 48, defaultTier: 49 },
@@ -188,7 +188,7 @@ const vm = new Vue({
       // Save data
       localStorage.setItem('data', JSON.stringify(data));
 
-      data.farmList = _.filter(data.petList, obj => obj.fragments < 330 && obj.farm);
+      data.farmList = data.petList;
       let tickets = data.entries + data.refills * 5;
 
       for (const pet of data.farmList) {
