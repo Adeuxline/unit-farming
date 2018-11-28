@@ -6,7 +6,7 @@ Vue.directive('sortable', {
 });
 
 const originalData = {
-  version: '0.2',
+  version: '0.3',
   petList: [
     { name: 'Crimson Hawk Rider', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "1",  caract1_6: "3", caract1_max: "60", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 20, img: 191, index: 0, defaultTier: 1 },
     { name: 'Musketress', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 15, img: 183, index: 1, defaultTier: 2 },
@@ -14,7 +14,7 @@ const originalData = {
     { name: 'Cleric', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "1", caract2_6: "3", caract2_max: "50", needed: 17, img: 167, index: 3, defaultTier: 4 },
     { name: 'Flame Spirit', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "75",  caract1_6: "150", caract1_max: "4000", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 27, img: 159, index: 4, defaultTier: 5 },
     { name: 'Valkyrie', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "100", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 10, img: 143, index: 5, defaultTier: 6 },
-    { name: 'Steam Punk', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "2",  caract1_6: "5", caract1_max: "50", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 10, img: 135, index: 6, defaultTier: 7 },
+    { name: 'Steam Punk', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "2",  caract1_6: "5", caract1_max: "75", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 15, img: 135, index: 6, defaultTier: 7 },
     { name: 'Pilot', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "50", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 5, img: 125, index: 7, defaultTier: 8 },
     { name: 'Hot-Blooded Xuanzang', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "0",  caract1_6: "1", caract1_max: "5", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 5, img: 117, index: 8, defaultTier: 9 },
     { name: 'Griffin Rider', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 111, index: 9, defaultTier: 10 },
@@ -29,7 +29,7 @@ const originalData = {
     { name: 'Elementalist', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "75", caract2_6: "150", caract2_max: "4000", needed: 27, img: 169, index: 18, defaultTier: 19 },
     { name: 'Hippogriff', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "1",  caract1_6: "2.5", caract1_max: "50", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 20, img: 161, index: 19, defaultTier: 20 },
     { name: 'Sword Dancer', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "100", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 10, img: 145, index: 20, defaultTier: 21 },
-    { name: 'Sylphid', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "2",  caract1_6: "5", caract1_max: "50", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 10, img: 137, index: 21, defaultTier: 22 },
+    { name: 'Sylphid', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "2",  caract1_6: "5", caract1_max: "75", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 15, img: 137, index: 21, defaultTier: 22 },
     { name: 'Alchemist', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "5", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 5, img: 127, index: 22, defaultTier: 23 },
     { name: 'Hoyden Goku', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "0",  caract1_6: "1", caract1_max: "5", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 5, img: 119, index: 23, defaultTier: 24 },
     { name: 'Forest Guardian', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 113, index: 24, defaultTier: 25 },
@@ -44,7 +44,7 @@ const originalData = {
     { name: 'Dark Elf', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 15, img: 171, index: 33, defaultTier: 34 },
     { name: 'Dark Spirit', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "0.3",  caract1_6: "0.7", caract1_max: "15", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 12, img: 163, index: 34, defaultTier: 35 },
     { name: 'Incubus', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "0.5",  caract1_6: "1", caract1_max: "10", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 10, img: 147, index: 35, defaultTier: 36 },
-    { name: 'Medusa', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "2",  caract1_6: "5", caract1_max: "50", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 10, img: 139, index: 36, defaultTier: 37 },
+    { name: 'Medusa', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "2",  caract1_6: "5", caract1_max: "75", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 15, img: 139, index: 36, defaultTier: 37 },
     { name: 'Lich', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "50", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 5, img: 129, index: 37, defaultTier: 38 },
     { name: 'Dark Amiral', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "0",  caract1_6: "1", caract1_max: "5", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 5, img: 121, index: 38, defaultTier: 39 },
     { name: 'Succubus', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "",  caract1_6: "", caract1_max: "", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 1, img: 115, index: 39, defaultTier: 40 },
@@ -59,7 +59,7 @@ const originalData = {
     { name: 'Frost Demon', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "150", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 24, img: 173, index: 48, defaultTier: 49 },
     { name: 'Blade Master', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "0.3",  caract1_6: "0.7", caract1_max: "15", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 12, img: 165, index: 49, defaultTier: 50 },
     { name: 'Ice Spirit', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "100", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 10, img: 149, index: 50, defaultTier: 51 },
-    { name: 'Naga', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "2",  caract1_6: "5", caract1_max: "50", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 10, img: 141, index: 51, defaultTier: 52 },
+    { name: 'Naga', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "2",  caract1_6: "5", caract1_max: "75", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 15, img: 141, index: 51, defaultTier: 52 },
     { name: 'Wyvern Rider', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "5",  caract1_6: "10", caract1_max: "100", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 5, img: 131, index: 52, defaultTier: 53 },
     { name: 'Raptor Rider', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "0",  caract1_6: "1", caract1_max: "5", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 5, img: 123, index: 53, defaultTier: 54 },
     { name: 'Sorcerer', fragments_n: 0, fragments: 0, caract1_name: "", caract1_5: "15",  caract1_6: "30", caract1_max: "900", caract2_name: "", caract2_5: "", caract2_6: "", caract2_max: "", needed: 24, img: 101, index: 54, defaultTier: 55 },
@@ -112,7 +112,7 @@ const vm = new Vue({
       return pet;
     },
     resetUnits(){
-        localStorage.setItem('data', JSNON.stringify(originalData));
+        localStorage.setItem('data', JSON.stringify(originalData));
         window.location.reload();
     },
     updateFarmList() {
