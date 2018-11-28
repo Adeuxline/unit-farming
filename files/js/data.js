@@ -76,7 +76,7 @@ const savedData = JSON.parse(localStorage.getItem('data')) || false;
 let data;
 if (savedData) { 
   if (savedData.version === originalData.version) {
-    data = _.cloneDeep(savedlData);
+    data = _.cloneDeep(savedData);
   } else {
     data = _.cloneDeep(originalData);
   }
