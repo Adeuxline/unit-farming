@@ -228,6 +228,13 @@ h4 {
   background-color: #222;
 }
 
+.unit_pet img {
+  width: 25px;
+  height: 25px;
+  background-color: #222;
+  float: right;
+}
+
 .SHStage:nth-of-type(2) {
   border-left: none;
 }
@@ -271,9 +278,21 @@ h4 {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.petName {
+span.petNameOk {
   font-weight: bold;
+  color: rgb(98, 145, 3);
 }
+span.petNameNonOk {
+  font-weight: bold;
+  color: rgb(224, 49, 6);
+}
+.petInput p.bonusok {
+	color: rgb(98, 145, 3);
+}
+.petInput p.bonusnonok {
+	color: rgb(224, 49, 6);
+}
+
 .stageName {
   top: 1px;
   left: 2px;
@@ -377,12 +396,4 @@ h4 {
   background: url(../img/hexagon.png), radial-gradient(circle, #333 0%, #333 40%, rgba(224, 49, 6, 0.3));
   background-size: 9%, cover;
   background-position: center;
-}
-
-.petInput p.bonusok {
-	color: rgb(98, 145, 3);
-}
-
-.petInput p.bonusnonok {
-	color: rgb(224, 49, 6);
 }
